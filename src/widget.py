@@ -23,7 +23,7 @@ def mask_account_card(card_name: str) -> str:
     return card_mask
 
 
-def get_date(long_date):
+def get_date(long_date: str) -> str:
     """принимает на вход строку и отдает корректный результат в формате 'ДД.ММ.ГГГГ'"""
 
     return f"{long_date[8:10]}-{long_date[5:7]}-{long_date[:4]}"
