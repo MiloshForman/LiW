@@ -1,8 +1,8 @@
 from src.masks import get_mask_account, get_mask_card_number
 
+
 def mask_account_card(card_name: str) -> str:
-    """Принимает тип-номер карты или счета
-       Возвращает замаскированный номер"""
+    """Принимает тип-номер карты или счета card_name и возвращает замаскированный номер card_mask"""
 
     card_word = ""
     card_number = ""
@@ -24,6 +24,6 @@ def mask_account_card(card_name: str) -> str:
 
 
 def get_date(long_date: str) -> str:
-    """принимает на вход строку и отдает корректный результат в формате 'ДД.ММ.ГГГГ'"""
+    """принимает на вход строку с датой long_date и отдает корректный результат в формате 'ДД.ММ.ГГГГ'"""
 
     return f"{long_date[8:10]}-{long_date[5:7]}-{long_date[:4]}"
