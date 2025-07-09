@@ -1,7 +1,7 @@
 from xmlrpc.client import Boolean
 
 
-def filter_by_state(source_list: list[dict], state='EXECUTED') -> list[dict]:
+def filter_by_state(source_list: list[dict], state: str='EXECUTED') -> list[dict]:
     """фильтрует словари по ключу
 
     принимает список словарей source_list, значение ключа state
@@ -19,7 +19,7 @@ def filter_by_state(source_list: list[dict], state='EXECUTED') -> list[dict]:
     return exit_list
 
 
-def sort_by_date(source_list: list[dict], sort_order=True) -> list[dict]:
+def sort_by_date(source_list: list[dict], sort_order: bool=True) -> list[dict]:
     """сортирует ключи по дате
 
     принимает список словарей source_list, порядок сортировки sort_order в формате булево

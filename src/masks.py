@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: int) -> str:
-    """принимает на вход номер карты и возвращает его маску"""
+    """принимает на вход номер карты card_number и возвращает его маску"""
 
     str_number = str(card_number)
 
@@ -7,7 +7,7 @@ def get_mask_card_number(card_number: int) -> str:
 
 
 def get_mask_account(account_number: int) -> str:
-    """принимает на вход номер счета и возвращает его маску"""
+    """принимает на вход номер счета account_number и возвращает его маску"""
 
     str_account = str(account_number)
 
