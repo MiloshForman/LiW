@@ -1,5 +1,14 @@
+from xmlrpc.client import Boolean
+
+
 def filter_by_state(source_list: list[dict], state='EXECUTED') -> list[dict]:
-    """принимает список словарей со значением ключа, и возвращает список со словарями, у которых ключ соответствует указанному значению"""
+    """фильтрует словари по ключу
+
+    принимает список словарей source_list, значение ключа state
+    и возвращает список exit_list со словарями,
+    у которых ключ соответствует указанному значению
+
+    """
 
     exit_list = []
 
@@ -11,7 +20,12 @@ def filter_by_state(source_list: list[dict], state='EXECUTED') -> list[dict]:
 
 
 def sort_by_date(source_list: list[dict], sort_order=True) -> list[dict]:
-    """принимает список словарей и возвращает список, отсортированный по дате в нужном порядке"""
+    """сортирует ключи по дате
+
+    принимает список словарей source_list, порядок сортировки sort_order в формате булево
+    и возвращает список exit_list, отсортированный по дате в нужном порядке (по умолчанию - убывание)
+
+    """
 
     exit_list = sorted(source_list, key=lambda x: x['date'], reverse=sort_order)
 
