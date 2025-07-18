@@ -4,11 +4,11 @@ from src.masks import get_mask_card_number, get_mask_account
 
 # card_name = "Visa 12345"
 
-print(mask_account_card())
+# print(mask_account_card())
 #
-# long_date = "2024-03-11T02:26:18.671407"
+# long_date = "T02:26:18.671407D2024-03-11"
 #
-# print(get_date(long_date))
+print(get_date())
 #
 # source_list = [
 #     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},

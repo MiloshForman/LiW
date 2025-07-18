@@ -1,4 +1,6 @@
 from src.masks import get_mask_account, get_mask_card_number
+from datetime import datetime
+import re
 
 
 def mask_account_card(card_name: str='0') -> str:
@@ -29,7 +31,17 @@ def mask_account_card(card_name: str='0') -> str:
     return card_mask
 
 
-def get_date(long_date: str) -> str:
+def get_date(long_date: str='0') -> str:
     """принимает на вход строку с датой long_date и отдает корректный результат в формате 'ДД.ММ.ГГГГ'"""
 
-    return f"{long_date[8:10]}-{long_date[5:7]}-{long_date[:4]}"
+    if long_date == None:
+        long_date = '0'
+
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}\w\d{2}:\d{2}:\d{2}\.\d{6}', long_date):
+        parsed_date = datetime.strptime(long_date, "%Y-%m-%dT%H:%M:%S.%f")
+        formatted_date = parsed_date.strftime("%d.%m.%Y")
+
+        return formatted_date
+
+    else:
+        return 'Неверный формат'

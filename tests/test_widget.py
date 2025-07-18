@@ -15,3 +15,15 @@ from src.widget import mask_account_card, get_date
 )
 def test_card_mask(card_name, card_account_mask):
     assert mask_account_card(card_name) == card_account_mask
+
+
+@pytest.mark.parametrize(
+    "long_date, short_date",
+    [
+        ('2024-03-11T02:26:18.671407', '11.03.2024'),
+        ('T02:26:18.671407D2024-03-11', 'Неверный формат'),
+        (None, 'Неверный формат')
+    ],
+)
+def test_get_date(long_date, short_date):
+    assert get_date(long_date) == short_date
