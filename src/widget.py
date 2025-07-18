@@ -1,12 +1,15 @@
 from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(card_name: str) -> str:
+def mask_account_card(card_name: str='0') -> str:
     """Принимает тип-номер карты или счета card_name и возвращает замаскированный номер card_mask"""
 
     card_word = ""
     card_number = ""
     card_mask = ""
+
+    if card_name == None:
+        card_name = '0'
 
     for card_symbol in card_name:
         if card_symbol.isdigit():
@@ -17,8 +20,11 @@ def mask_account_card(card_name: str) -> str:
     if len(card_number) == 16:
         card_mask = card_word + get_mask_card_number(int(card_number))
 
-    if len(card_number) == 20:
+    elif len(card_number) == 20:
         card_mask = card_word + get_mask_account(int(card_number))
+
+    else:
+        return 'Неправильный номер'
 
     return card_mask
 

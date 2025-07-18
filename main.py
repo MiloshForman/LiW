@@ -2,9 +2,9 @@ from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
 from src.masks import get_mask_card_number, get_mask_account
 
-# card_name = "Visa Gold 5999414228426353"
-#
-# print(mask_account_card(card_name))
+# card_name = "Visa 12345"
+
+print(mask_account_card())
 #
 # long_date = "2024-03-11T02:26:18.671407"
 #
@@ -23,8 +23,10 @@ from src.masks import get_mask_card_number, get_mask_account
 
 # card_number = 59
 
-print(get_mask_card_number())
+# print(get_mask_card_number())
 
 # account_number = 736541
 
-print(get_mask_account())
+# print(get_mask_account())
+
+
