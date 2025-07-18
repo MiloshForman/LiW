@@ -1,4 +1,4 @@
-def get_mask_card_number(card_number: int) -> str:
+def get_mask_card_number(card_number: int=0) -> str:
     """принимает на вход номер карты card_number и возвращает его маску"""
 
     str_number = str(card_number)
@@ -9,9 +9,12 @@ def get_mask_card_number(card_number: int) -> str:
         return "Неправильный номер карты"
 
 
-def get_mask_account(account_number: int) -> str:
+def get_mask_account(account_number: int=0) -> str:
     """принимает на вход номер счета account_number и возвращает его маску"""
 
     str_account = str(account_number)
 
-    return f"**{str_account[-4:]}"
+    if len(str_account) == 20:
+        return f"**{str_account[-4:]}"
+    else:
+        return "Неправильный номер карты"

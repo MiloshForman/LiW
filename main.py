@@ -1,6 +1,6 @@
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
-from src.masks import get_mask_card_number
+from src.masks import get_mask_card_number, get_mask_account
 
 # card_name = "Visa Gold 5999414228426353"
 #
@@ -21,6 +21,10 @@ from src.masks import get_mask_card_number
 #
 # print(sort_by_date(source_list))
 
-card_number = 5999414228426353
+# card_number = 59
 
-print(get_mask_card_number(card_number))
+print(get_mask_card_number())
+
+# account_number = 736541
+
+print(get_mask_account())

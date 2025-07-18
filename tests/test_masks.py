@@ -1,14 +1,18 @@
 from src.masks import get_mask_card_number, get_mask_account
+import pytest
 
 
-def test_card_mask():
-    assert get_mask_card_number(7000792289606361) == '7000 79** **** 6361'
+@pytest.mark.parametrize(
+    "card_number, card_mask",
+    [(7000792289606361, "7000 79** **** 6361"), (123, "Неправильный номер карты"), (None, "Неправильный номер карты")],
+)
+def test_card_mask(card_number, card_mask):
+    assert get_mask_card_number(card_number) == card_mask
 
 
-def test_empty_card():
-    assert get_mask_card_number(None) == ''
-
-
-def test_check_mask():
-    assert get_mask_account(73654108430135874305) == '**4305'
-
+@pytest.mark.parametrize(
+    "account_number, account_mask",
+    [(73654108430135874305, "**4305"), (123, "Неправильный номер карты"), (None, "Неправильный номер карты")],
+)
+def test_check_mask(account_number, account_mask):
+    assert get_mask_account(account_number) == account_mask
