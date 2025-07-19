@@ -3,7 +3,7 @@ from datetime import datetime
 import re
 
 
-def mask_account_card(card_name: str='0') -> str:
+def mask_account_card(card_name: str = "0") -> str:
     """Принимает тип-номер карты или счета card_name и возвращает замаскированный номер card_mask"""
 
     card_word = ""
@@ -11,7 +11,7 @@ def mask_account_card(card_name: str='0') -> str:
     card_mask = ""
 
     if card_name == None:
-        card_name = '0'
+        card_name = "0"
 
     for card_symbol in card_name:
         if card_symbol.isdigit():
@@ -26,22 +26,22 @@ def mask_account_card(card_name: str='0') -> str:
         card_mask = card_word + get_mask_account(int(card_number))
 
     else:
-        return 'Неправильный номер'
+        return "Неправильный номер"
 
     return card_mask
 
 
-def get_date(long_date: str='0') -> str:
+def get_date(long_date: str = "0") -> str:
     """принимает на вход строку с датой long_date и отдает корректный результат в формате 'ДД.ММ.ГГГГ'"""
 
     if long_date == None:
-        long_date = '0'
+        long_date = "0"
 
-    if re.fullmatch(r'\d{4}-\d{2}-\d{2}\w\d{2}:\d{2}:\d{2}\.\d{6}', long_date):
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}\w\d{2}:\d{2}:\d{2}\.\d{6}", long_date):
         parsed_date = datetime.strptime(long_date, "%Y-%m-%dT%H:%M:%S.%f")
         formatted_date = parsed_date.strftime("%d.%m.%Y")
 
         return formatted_date
 
     else:
-        return 'Неверный формат'
+        return "Неверный формат"

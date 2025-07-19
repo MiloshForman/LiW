@@ -43,7 +43,14 @@ import pytest
         ),
     ],
 )
-def test_sort_dict(source_list, state, exit_list):
+def test_sort_dict(source_list: list[dict], state: str, exit_list: list[dict]):
+    """Тестирует функцию filter_by_state на фильтрацию словарей в списке
+
+    по заданному статусу и работу при отсутствии словарей с указанным статусом
+    state в списке
+
+    """
+
     assert filter_by_state(source_list, state) == exit_list
 
 
@@ -103,9 +110,15 @@ def test_sort_dict(source_list, state, exit_list):
                 {"id": 615064591, "state": "CANCELED", "date": "T08:21:33.419441D2018-10-14"},
             ],
             False,
-            "Некорректная дата"
+            "Некорректная дата",
         ),
     ],
 )
-def test_sort_by_date(source_list, sort_order, exit_list):
+def test_sort_by_date(source_list: list[dict], sort_order: bool, exit_list):
+    """Тестирует функцию sort_by_date на сортировку словарей в списке
+
+    по датам в зависимости от указанного порядка сортировки, проверяет корректность сортировки при одинаковых датах,
+    показывает работу функции с некорректными датами.
+
+    """
     assert sort_by_date(source_list, sort_order) == exit_list
