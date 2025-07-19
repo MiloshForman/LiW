@@ -1,32 +1,30 @@
+from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
-from src.masks import get_mask_card_number, get_mask_account
 
-# card_name = "Visa 12345"
+card_name = "Visa 12345"
 
-# print(mask_account_card())
-#
-# long_date = "T02:26:18.671407D2024-03-11"
-#
-# print(get_date())
-#
+print(mask_account_card())
+
+long_date = "T02:26:18.671407D2024-03-11"
+
+print(get_date())
+
 source_list = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
     {"id": 594226727, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     {"id": 615064591, "state": "CANCELED", "date": "T08:21:33.419441D2018-10-14"},
 ]
-#
-# print(filter_by_state(source_list, "CANCELED"))
-#
+
+print(filter_by_state(source_list, "CANCELED"))
+
 print(sort_by_date(source_list, False))
 
-# card_number = 59
+card_number = 59
 
-# print(get_mask_card_number())
+print(get_mask_card_number())
 
-# account_number = 736541
+account_number = 736541
 
-# print(get_mask_account())
-
-
+print(get_mask_account())

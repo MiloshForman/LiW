@@ -1,5 +1,6 @@
 from src.processing import filter_by_state, sort_by_date
 import pytest
+from typing import Any
 
 
 @pytest.mark.parametrize(
@@ -43,7 +44,7 @@ import pytest
         ),
     ],
 )
-def test_sort_dict(source_list: list[dict], state: str, exit_list: list[dict]):
+def test_sort_dict(source_list: list[dict], state: str, exit_list: list[dict]) -> Any:
     """Тестирует функцию filter_by_state на фильтрацию словарей в списке
 
     по заданному статусу и работу при отсутствии словарей с указанным статусом
@@ -114,7 +115,7 @@ def test_sort_dict(source_list: list[dict], state: str, exit_list: list[dict]):
         ),
     ],
 )
-def test_sort_by_date(source_list: list[dict], sort_order: bool, exit_list):
+def test_sort_by_date(source_list: list[dict], sort_order: bool, exit_list: list[dict]) -> Any:
     """Тестирует функцию sort_by_date на сортировку словарей в списке
 
     по датам в зависимости от указанного порядка сортировки, проверяет корректность сортировки при одинаковых датах,

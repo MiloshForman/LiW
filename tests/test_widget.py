@@ -1,5 +1,6 @@
 import pytest
 from src.widget import mask_account_card, get_date
+from typing import Any
 
 
 @pytest.mark.parametrize(
@@ -13,7 +14,7 @@ from src.widget import mask_account_card, get_date
         (None, "Неправильный номер"),
     ],
 )
-def test_card_mask(card_name: str, card_account_mask: str):
+def test_card_mask(card_name: str, card_account_mask: str) -> Any:
     """Тестирует функцию mask_account_card
 
     на корректное распознавание и применение нужного типа маскировки
@@ -33,7 +34,7 @@ def test_card_mask(card_name: str, card_account_mask: str):
         (None, "Неверный формат"),
     ],
 )
-def test_get_date(long_date: str, short_date: str):
+def test_get_date(long_date: str, short_date: str) -> Any:
     """Тестирует функцию get_date
 
     на правильность преобразования даты, реакцию на некорректный формат
